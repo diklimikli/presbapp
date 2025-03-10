@@ -1,0 +1,354 @@
+/* Base Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('bg.png');
+  font-family: monospace;
+  color: #000000;
+  backdrop-filter: blur(px);
+  transition: background 0.3s ease;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 570px; 
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.452);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgb(177, 99, 9), inset 0 0 5px rgba(196, 4, 4, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+.card h1 {
+  font-size: 1.6em; /* Increased font size for readability */
+  color: #b4abbe;
+  margin: 10px 0;
+  text-shadow: 0 1px 8px rgba(26, 7, 49, 0.6);
+}
+
+.card #reading-plan p {
+  margin: 8px 0;
+  font-size: 1em;
+  line-height: 1.4;
+  color: #fdfdfd;
+  transition: color 0.3s ease;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.progress {
+  height: 80%;
+  width: 0;
+  background: linear-gradient(145deg, #a03567, #a66fff);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+.nav-buttons button {
+  background: rgba(134, 22, 22, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85em;
+  flex: 1;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-family: monospace;
+}
+
+.nav-buttons button:hover {
+  background: linear-gradient(145deg, #5a4d98, #3e3574);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Dark/Light Mode Toggle Switch */
+.mode-toggle {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #bb86fc;
+}
+
+.mode-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.mode-toggle .slider {
+  width: 50px;
+  height: 24px;
+  background-color: #1c1b29;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  margin: 0 10px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.mode-toggle .slider::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #bb86fc;
+  transition: transform 0.3s ease;
+}
+
+/* Slide button animation */
+.mode-toggle input[type="checkbox"]:checked + .slider {
+  background-color: #bb86fc;
+}
+
+.mode-toggle input[type="checkbox"]:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.mode-toggle .mode-text {
+  color: #e0d3f7;
+  font-size: 0.9em;
+}
+
+/* Verse Lookup */
+.verse-lookup {
+  margin-top: 15px;
+}
+
+.verse-lookup input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 70%; /* Flexibly sized for mobile */
+}
+
+.verse-lookup button {
+  padding: 10px;
+  background: linear-gradient(145deg, #3b316f, #241e52);
+  border: none;
+  border-radius: 5px;
+  color: #bb86fc;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.verse-lookup button:hover {
+  background: linear-gradient(145deg, #5a4d98, #3e3574);
+  color: #fff;
+}
+
+/* Verse Display */
+#verse-display {
+  margin-top: 15px;
+  color: #e0d3f7;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-image: url('bg.png');
+  color: #333;
+}
+
+body.light-mode .card {
+  background: linear-gradient(145deg, #ffffff, #e0e0e0);
+  opacity: 0.8;
+  box-shadow: rgb(0, 17, 255);
+}
+
+body.light-mode .mode-text {
+  color: #333;
+}
+
+body.light-mode .card h1,
+body.light-mode #reading-plan p {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .card {
+      padding: 5px; /* Reduced padding for mobile */
+      
+  }
+
+  .nav-buttons {
+      flex-direction: row;
+       /* Stack buttons vertically */
+  }
+
+  .nav-buttons button {
+      margin-bottom: 4px; /* Spacing between buttons */
+      width: 80px;
+      padding: 6px;
+      
+  }
+
+  .verse-lookup input {
+      width: 100%; /* Full width for mobile */
+  }
+
+  .mode-toggle {
+      flex-direction: column; /* Stack toggle elements vertically */
+      align-items: flex-start; /* Align toggle to the left */
+  }
+
+  .mode-toggle input[type="checkbox"] {
+      margin-top: 5px; /* Add some margin */
+  }
+}
+/* Progress Bar */
+
+/* Progress Bar */
+/* Progress Bar */
+.progress-bar {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  background-color: #3b316f;
+  border-radius: 10px;
+  margin: 15px 0;
+  overflow: hidden;
+  margin-left: 10%;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Liquid animation */
+.progress {
+  height: 100%;
+  width: 100%; /* Always covers the full width for looping effect */
+  background: linear-gradient(
+    120deg,
+    #bb86fc 25%,
+    #ff6fbe 50%,
+    #bb86fc 75%
+  );
+  background-size: 200% 100%; /* Allows for movement */
+  animation: liquid-flow 2s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Animation keyframes */
+@keyframes liquid-flow {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* Percentage text overlay */
+.progress-bar-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1; /* Ensure text is above the liquid animation */
+}
+
+
+/* Verse Lookup Section */
+#verse-input {
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 12px;
+  border: 2px solid #973ba0;
+  border-radius: 5px;
+  background-color: #3b316f;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#verse-input:focus {
+  border-color: #bb86fc;
+  background-color: #4e3b7b;
+}
+
+#lookup-button {
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #bb86fc;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#lookup-button:hover {
+  background-color: #d8a3ff;
+}
+
+#verse-display {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #bb86fc;
+  border-radius: 25px;
+  background-color: #3b316f;
+  color: #ffffff;
+  font-size: 12px;
+  box-shadow: #ff6b6b;
+  }
+
+#verse-display p {
+  margin: 0;
+  padding: 5px 0;
+  color: #bb86fc;
+}
+
+.verse-error {
+  color: #ff6b6b;
+}
+
+#reading-container {
+  margin-bottom: 30px;
+}
+
+
+
