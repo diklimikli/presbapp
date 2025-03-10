@@ -4,128 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Énekeskönyv</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container">
-        <h1>Énekeskönyv</h1>
-
-        <input type="text" id="searchBar" placeholder="Search songs..." onkeyup="filterSongs()">
+        <!-- Circle Search Bar -->
+        <div id="searchCircle" class="search-circle">
+            <input type="text" id="songSearch" placeholder="Keresés" />
+        </div>
         
-        <select id="songSelect" size="5" onclick="loadSong()">
-            <option value="001.pdf">1. A Bárány vére</option>
-            <option value="002.pdf">2. Adj új szívet</option>
-            <option value="003.pdf">3. Aki értem megnyíltál</option>
-            <option value="004.pdf">4. Ahol az élet vize árad</option>
-            <option value="005.pdf">5. Áldásodd megyünk</option>
-            <option value="006.pdf">6. Áldd, lelkem, Istened</option>
-            <option value="007.pdf">7. Áldd meg, édes Istenünk</option>
-            <option value="008.pdf">8. Áldjad, lelkem, áldjad, életem</option>
-            <option value="009.pdf">9. Áldjátok az Urat</option>
-            <option value="010.pdf">10. Áldjon meg téged</option>
-            <option value="011.pdf">11. Áldott a nap</option>
-            <option value="012.pdf">12. Áldott az Úr</option>
-            <option value="013.pdf">13. Áldott légy, Istenem!</option>
-            <option value="014.pdf">14. Álmokat kergettél</option>
-            <option value="015.pdf">15. A mélyből Hozzád száll szavam</option>
-            <option value="016.pdf">16. Üres</option>
-            <option value="017.pdf">17. Amikor teljes sötétség</option>
-            <option value="018.pdf">18. Amint vagyok</option>
-            <option value="019.pdf">19. A nepfelkeltétől</option>
-            <option value="020.pdf">20. A napkeltétől napnyugtáig</option>
-            <option value="021.pdf">21. Aranyszárnyú angyal</option>
-            <option value="022.pdf">22. Átadom magamat</option>
-            <option value="023.pdf">23. A Te nevedben</option>
-            <option value="024.pdf">24. Atyám, én imádlak</option>
-            <option value="025.pdf">25. Atyám, két kezedben</option>
-            <option value="026.pdf">26. Atyját és az anyját</option>
-            <option value="27.pdf">27. Az Ő szeretete</option>
-            <option value="28.pdf">28. Az Úr csodásan működik</option>
-            <option value="29.pdf">29. Az Úr gondol ránk</option>
-            <option value="30.pdf">30. Az Úr jósága</option>
-            <option value="31.pdf">31. Az Úr lejött</option>
-            <option value="32.pdf">32. Az Úr van itt</option>
-            <option value="33.pdf">33. Békét ad Ő</option>
-            <option value="34.pdf">34. Bízom benned, Uram, Jézus</option>
-            <option value="35.pdf">35. Boldog ember az</option>
-            <option value="36.pdf">36. Csodálom az Ő útjait</option>
-            <option value="37.pdf">37. Dicséri, áldja szüntelen</option>
-            <option value="38.pdf">38. Édes Atyám, Tiéd az ég</option>
-            <option value="39.pdf">39. Egyedül csak Te vagy</option>
-            <option value="40.pdf">40. Egymásnak terhét</option>
-            <option value="41.pdf">41. Egy új nap</option>
-            <option value="42.pdf">42. Egy új parancsot adok néktek</option>
-            <option value="43.pdf">43. Éjjel, nappal</option>
-            <option value="44.pdf">44. El Shaddai</option>
-            <option value="45.pdf">45. Életem csak kegyelem</option>
-            <option value="46.pdf">46. Életutam</option>
-            <option value="47.pdf">47. Elhagytad mennyei hazád</option>
-            <option value="48.pdf">48. Elmúlik ez a világ</option>
-            <option value="49.pdf">49. Emberek vagy angyalok nyelvén</option>
-            <option value="50.pdf">50. Emlékezzél meg</option>
-            <option value="51.pdf">51. Én Istenem, Benned bízom</option>
-            <option value="52.pdf">52. Én Istenem! (Mi Atyánk)</option>
-            <option value="53.pdf">53. Én kiválasztottalak téged</option>
-            <option value="54.pdf">54. Énekelj az Úrnak</option>
-            <option value="55.pdf">55. Én Uram, én Istenem</option>
-            <option value="56.pdf">56. Esdve kérlek, jó Atyám</option>
-            <option value="57.pdf">57. Este van, imádkozunk</option>
-            <option value="58.pdf">58. Ez a szó: szeretet</option>
-            <option value="59.pdf">59. Ez az a nap</option>
-            <option value="60.pdf">60. Fel, barátim</option>
-            <option value="61.pdf">61. Felséges vagy, Uram</option>
-            <option value="62.pdf">62. Formáld a szívünket</option>
-            <option value="63.pdf">63. Földön és égen</option>
-            <option value="64.pdf">64. Fönn a csillagok felett</option>
-            <option value="65.pdf">65. Ha csak hangulat él a szívemben</option>
-            <option value="66.pdf">66. Hadd énekeljek hű Mesteremről</option>
-            <option value="67.pdf">67. Hajnalórán lelkem ébred</option>
-            <option value="068.pdf"></option>
-            <option value="069.pdf"></option>
-            <option value="070.pdf"></option>
-            <option value="071.pdf"></option>
-            <option value="072.pdf"></option>
-            <option value="073.pdf"></option>
-            <option value="074.pdf"></option>
-            <option value="075.pdf"></option>
-            <option value="076.pdf"></option>
-            <option value="077.pdf"></option>
-            <option value="078.pdf"></option>
-            <option value="079.pdf"></option>
-            <option value="080.pdf"></option>
-            <option value="081.pdf"></option>
-            <option value="082.pdf"></option>
-            <option value="083.pdf"></option>
-            <option value="084.pdf"></option>
-            <option value="085.pdf"></option>
-            <option value="086.pdf"></option>
-            <option value="087.pdf"></option>
-            <option value="088.pdf"></option>
-            <option value="089.pdf"></option>
-            <option value="090.pdf"></option>
-            <option value="091.pdf"></option>
-            <option value="092.pdf"></option>
-            <option value="093.pdf"></option>
-            <option value="094.pdf"></option>
-            <option value="095.pdf"></option>
-            <option value="096.pdf"></option>
-            <option value="097.pdf"></option>
-            <option value="098.pdf"></option>
-            <option value="099.pdf"></option>
-            <option value="100.pdf"></option>
-            <option value="0.pdf"></option>
-            <option value="0.pdf"></option>
-            <option value="0.pdf"></option>
-            <option value="0.pdf"></option>
-            <option value="0.pdf"></option>
-
-        </select>
-
-        <div class="pdf-container">
-            <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        <!-- PDF Viewer -->
+        <div id="pdfViewer" class="pdf-viewer">
+            <iframe id="pdfIframe" src="" width="100%" height="100%"></iframe>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
