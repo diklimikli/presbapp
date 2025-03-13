@@ -101,10 +101,30 @@ function resetCircle() {
 }
 
 function loadSongPDF(song) {
-    // Simulate loading the song PDF by song number or name
-    let pdfURL = `songs/${song.number}.pdf`; // Change URL pattern as needed
+    let pdfURL = `songs/${song.number}.pdf`;
 
-    // Show the PDF viewer and load the corresponding PDF
     document.getElementById("pdfViewer").style.display = "block";
-    document.getElementById("pdfIframe").src = pdfURL;
+
+    // Load PDF.js and render
+    const loadingTask = pdfjsLib.getDocument(pdfURL);
+    loadingTask.promise.then(pdf => {
+        pdf.getPage(1).then(page => {
+            const scale = 1.5;
+            const viewport = page.getViewport({ scale });
+
+            const canvas = document.getElementById("pdfCanvas");
+            const context = canvas.getContext("2d");
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport
+            };
+            page.render(renderContext);
+        });
+    }).catch(error => {
+        console.error("Error loading PDF: ", error);
+    });
 }
