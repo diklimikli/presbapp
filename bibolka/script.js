@@ -21,10 +21,10 @@ function updateReadingPlan() {
   const readingPlan = readings[monthDay];
   if (readingPlan) {
     document.getElementById('reading-plan').innerHTML = `
-      <p><strong>Ószövetség:</strong> <span class="igemutato" data-ref="${readingPlan["Old Testament"].ref}"><a href="https://regi.szentiras.hu/SZIT/${readingPlan["Old Testament"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["Old Testament"].ref}</a></span></p>
-      <p><strong>Újszövetség:</strong> <span class="igemutato" data-ref="${readingPlan["New Testament"].ref}"><a href="https://regi.szentiras.hu/SZIT/${readingPlan["New Testament"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["New Testament"].ref}</a></span></p>
-      <p><strong>Zsoltárok:</strong> <span class="igemutato" data-ref="${readingPlan["Psalms"].ref}"><a href="https://regi.szentiras.hu/SZIT/${readingPlan["Psalms"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["Psalms"].ref}</a></span></p>
-      <p><strong>Példabeszédek:</strong> <span class="igemutato" data-ref="${readingPlan["Proverbs"].ref}"><a href="https://regi.szentiras.hu/SZIT/${readingPlan["Proverbs"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["Proverbs"].ref}</a></span></p>
+      <p><strong>Ószövetség:</strong> <span class="igemutato" data-ref="${readingPlan["Old Testament"].ref}"><a href="https://regi.szentiras.hu/KG/${readingPlan["Old Testament"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["Old Testament"].ref}</a></span></p>
+      <p><strong>Újszövetség:</strong> <span class="igemutato" data-ref="${readingPlan["New Testament"].ref}"><a href="https://regi.szentiras.hu/KG/${readingPlan["New Testament"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["New Testament"].ref}</a></span></p>
+      <p><strong>Zsoltárok:</strong> <span class="igemutato" data-ref="${readingPlan["Psalms"].ref}"><a href="https://regi.szentiras.hu/KG/${readingPlan["Psalms"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["Psalms"].ref}</a></span></p>
+      <p><strong>Példabeszédek:</strong> <span class="igemutato" data-ref="${readingPlan["Proverbs"].ref}"><a href="https://regi.szentiras.hu/KG/${readingPlan["Proverbs"].ref.replace(/ /g, '')}" target="_blank">${readingPlan["Proverbs"].ref}</a></span></p>
     `;
     reloadIgemutatoScript();
   } else {
